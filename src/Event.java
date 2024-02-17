@@ -39,10 +39,16 @@ public class Event {
     //constructor
     public Event(String name, Date begin, Date end) throws ErrorEvent, InvalidData {
 
+        try{
+            setName(name);
+            setBegin(begin);
+            setEnd(end);
+        }catch (InvalidData e){
 
-        setName(name);
-        setBegin(begin);
-        setEnd(end);
+            System.out.println(e.getMessage());
+
+        }
+
 
 
 
