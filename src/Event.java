@@ -37,7 +37,7 @@ public class Event {
 
 
     //constructor
-    public Event(String name, Date begin, Date end) throws ErrorEvent {
+    public Event(String name, Date begin, Date end) throws ErrorEvent, InvalidData {
 
 
         setName(name);
