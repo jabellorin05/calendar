@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class Event {
 
@@ -48,7 +47,7 @@ public class Event {
 
 
     //constructor
-    public Event(String name, Date begin, Date end) throws ErrorEvent, InvalidData {
+    public Event(String name, Date begin, Date end) throws ErrorEvent, DateErrorException {
 
         try{
 
@@ -68,7 +67,7 @@ public class Event {
     }
 
 
-    Date EventDuration() throws ErrorDate {
+    Date EventDuration() throws ErrorDate, DateErrorException {
       //calcs the durations of the event
         int dMinutes= getEnd().minute-getBegin().minute;
         int dHours = getEnd().getHour()-begin.getHour();
@@ -81,7 +80,7 @@ public class Event {
 
     }
 
-    void DisplayDuration() throws ErrorEvent, ErrorDate {
+    void DisplayDuration() throws ErrorEvent, ErrorDate, DateErrorException {
 
         System.out.printf("The duration is: Days:%d Months:%d Years:%d Hours:%d Minutes:%d",EventDuration().day,EventDuration().month,EventDuration().year,EventDuration().hour,EventDuration().minute);
 
@@ -124,7 +123,7 @@ public class Event {
     }
 
 
-    public String getEventByDate(Date beginning,Date End){
+    public String getEventByDate(Date beginning,Date End) throws ErrorCalendar {
 
         ArrayList<Event> list = calendar.GetList();
 
@@ -136,12 +135,13 @@ public class Event {
             }
 
         }
+        throw new ErrorCalendar("Event not found");
 
-        return "";
+
     }
 
     //Check and Display if an specific event is in the calendar event(if exist or not by its beginning and end dates)
-    void DisplayEventIsPresent(Date beginningDate, Date endDate){
+    void DisplayEventIsPresent(Date beginningDate, Date endDate) throws ErrorCalendar {
 
         if (getEventByDate(beginningDate,endDate)!=null)
             System.out.println("Is not present");

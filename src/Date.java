@@ -2,7 +2,7 @@ public class Date {
 
     int day, month, year, hour,minute;
 
-
+//January 1, 2022, 0:00.
     public int getDay() {
         return day;
     }
@@ -43,8 +43,21 @@ public class Date {
         this.minute = minute;
     }
 
+//January 1, 2022, 0:00.
+    public Date(int day, int month, int year, int hour, int minute) throws ErrorDate, DateErrorException {
 
-    public Date(int day, int month, int year, int hour, int minute) throws ErrorDate {
+        if (year<=2022){
+            if(month==1){
+                if (hour==0){
+                    if(minute==0){
+                        day=0;
+                        month=0;
+                        year=0;
+                        throw new DateErrorException("The date can not be before January 1, 2022, 0:00. ");
+                    }
+                }
+            }
+        }
 
         this.day=day;
         this.month=month;
