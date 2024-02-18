@@ -44,6 +44,19 @@ public class Date {
     }
 
 
-    public Date(int day, int month, int year, int hour, int minute)
-            throws ErrorDate{}
+    public Date(int day, int month, int year, int hour, int minute) throws ErrorDate {
+
+        this.day=day;
+        this.month=month;
+        this.year=year;
+        this.hour=hour;
+        this.minute=minute;
+
+
+      //  throw new  ErrorDate("invalid Date");
+
+    }
+
+
+
 }
