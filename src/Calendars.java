@@ -42,10 +42,14 @@ public class Calendars {
     }
     public boolean remove(String name){return false;}
     public String searchEvent(Date d){return "";}
+
+
+    //revisar que hacen
     public Date startDate(String name) throws ErrorCalendar {
 
         return null;
     }
+
     public Date endDate(String name) throws ErrorCalendar {
 
 
