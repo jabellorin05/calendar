@@ -124,8 +124,36 @@ public class Event {
     }
 
 
+    public Event getEventByDate(Date beginning,Date End){
 
+        ArrayList<Event> list = calendar.GetList();
+
+        for (Event value : list) {
+
+            if (value.getBegin().day==beginning.day && value.getBegin().month==beginning.month && value.getBegin().year==beginning.year &&
+                value.getEnd().day==End.day && value.getEnd().month==End.month && value.getEnd().year==End.year){
+                return value;
+            }
+
+        }
+
+        return null;
     }
+
+    //Check and Display if an specific event is in the calendar event(if exist or not by its beginning and end dates)
+    void DisplayEventIsPresent(Date beginningDate, Date endDate){
+
+        if (getEventByDate(beginningDate,endDate)!=null)
+            System.out.println("Is not present");
+        else{
+            System.out.println("Is present");
+        }
+    }
+
+
+
+
+}
 
 
 
