@@ -30,7 +30,7 @@ public class Main {
      //  event1 = event.getEventByDate(beginDate,endDate1);
        int result=  calendar.getDaysByMonth(4,2023);
 
-      boolean resul = calendar.RemoveEventByName("sky");
+      boolean resul = calendar.RemoveEventByName("skyy");
     }
 
 

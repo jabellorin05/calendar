@@ -22,15 +22,15 @@ public class Calendars {
 
     public boolean RemoveEventByName(String name) {
 
-        for (Event event : events) {
 
-            if (event.getName().equals(name)) {
+
+            if (event.getEventByName(name)!=null) {
                 events.remove(event);
                 return true;
             }
 
 
-        }
+
         return false;
     }
 
