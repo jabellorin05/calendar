@@ -9,8 +9,9 @@ public class Calendars {
     public Calendars(){}
     public boolean add(Event e) throws ErrorEvent, ErrorDate {
 
-        if (e.getName()!=null && e.getBegin()!=null && e.getEnd()!=null && e.isEndAfterBegin()){
+        if (e.getName()!=null && e.getBegin()!=null && e.getEnd()!=null && e.isEndAfterBegin() && event.getEventByName(e.getName())!=null){
             events.add(e);
+            System.out.println("The event was add it successfully");
             return true;
         }else{
             return false;
@@ -26,6 +27,7 @@ public class Calendars {
 
             if (event.getEventByName(name)!=null) {
                 events.remove(event);
+                System.out.println("The event was removed it successfully");
                 return true;
             }
 
